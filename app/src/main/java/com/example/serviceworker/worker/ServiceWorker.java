@@ -16,15 +16,22 @@ public class ServiceWorker {
         this.name = name;
         workerQueue = new LinkedList<>();
         handler = new Handler(Looper.getMainLooper());
-        poll();
+        startPolling();
     }
 
+    /**
+     *
+     * @param task Adds new task to worker
+     */
     public void addTask(Task task) {
-        // TODO: complete this
         workerQueue.add(task);
     }
 
-    private void poll() {
+    /**
+     * Starts polling queue for incoming taska
+     * and keeps them processing
+     */
+    private void startPolling() {
         pollThread = new Thread() {
             @Override
             public void run() {

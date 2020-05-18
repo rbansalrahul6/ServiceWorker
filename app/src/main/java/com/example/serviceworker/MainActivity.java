@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -59,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         serviceWorker1.addTask(new Task<Bitmap>() {
             @Override
             public Bitmap onExecuteTask() {
-                // TODO
                 Request request = new Request.Builder().url(IMAGE_1).build();
                 Bitmap bitmap = null;
                 try {
@@ -72,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onTaskComplete(Bitmap result) {
-                // TODO: set image bitmap
                 if (result != null) {
                     imageView1.setImageBitmap(result);
                 }
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchImage2AndSet() {
-        serviceWorker1.addTask(new Task<Bitmap>() {
+        serviceWorker2.addTask(new Task<Bitmap>() {
             @Override
             public Bitmap onExecuteTask() {
                 // TODO
