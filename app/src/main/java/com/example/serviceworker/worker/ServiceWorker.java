@@ -53,4 +53,10 @@ public class ServiceWorker {
 
         pollThread.start();
     }
+
+    public void stop() {
+        if (pollThread != null)
+            pollThread.interrupt();
+        pollThread = null;
+    }
 }

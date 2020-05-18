@@ -47,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        serviceWorker1.stop();
+        serviceWorker2.stop();
+    }
+
     private void initViews() {
         imageView1 = findViewById(R.id.image1);
         imageView2 = findViewById(R.id.image2);
