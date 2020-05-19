@@ -28,8 +28,8 @@ public class ServiceWorker {
     }
 
     /**
-     * Starts polling queue for incoming taska
-     * and keeps them processing
+     * Starts polling queue for incoming tasks
+     * and keeps processing them
      */
     private void startPolling() {
         pollThread = new Thread() {
