@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         serviceWorker2.addTask(new Task<Bitmap>() {
             @Override
             public Bitmap onExecuteTask() {
-                // TODO
                 Request request = new Request.Builder().url(IMAGE_2).build();
                 Bitmap bitmap = null;
                 try {
@@ -101,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onTaskComplete(Bitmap result) {
-                // TODO: set image bitmap
                 if (result != null) {
                     imageView2.setImageBitmap(result);
                 }
